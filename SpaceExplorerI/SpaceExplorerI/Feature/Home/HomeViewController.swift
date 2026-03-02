@@ -82,7 +82,10 @@ class HomeViewController: UIViewController {
             .subscribe(onNext: { [weak self] item in
                 switch item.route {
                 case .adop:
-                    let vc = ADOPViewController()
+                    let storyboard = UIStoryboard(name: "ADOP", bundle: nil)
+                    let vc = storyboard.instantiateViewController(
+                        withIdentifier: "ADOP"
+                    ) as! ADOPViewController
                     self?.navigationController?.pushViewController(vc, animated: true)
                 }
             })

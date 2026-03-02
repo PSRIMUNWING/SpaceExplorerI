@@ -10,4 +10,7 @@ import UIKit
 
 class ADOPViewController: UIViewController {
     
+    override func viewDidLoad() {
+        super.viewDidLoad()
+    }
 }
