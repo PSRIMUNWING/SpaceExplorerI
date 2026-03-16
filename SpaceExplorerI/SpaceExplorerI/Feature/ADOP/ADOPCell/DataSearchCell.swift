@@ -6,18 +6,26 @@
 //
 
 import UIKit
+import RxSwift
 
 class DataSearchCell: UITableViewCell {
-
+    
+    static let identifier = "DataSearchCell"
+    var disposeBag = DisposeBag()
+    
+    @IBOutlet weak var view: UIView!
+    @IBOutlet weak var titleCell: UILabel!
+    @IBOutlet weak var datePicker: UIDatePicker!
+    @IBOutlet weak var searchButton: UIButton!
+    
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code
-    }
-
-    override func setSelected(_ selected: Bool, animated: Bool) {
-        super.setSelected(selected, animated: animated)
-
-        // Configure the view for the selected state
+        
+        titleCell.textColor = AppTheme.titlePrimary
+        titleCell.font = AppTextStyle.titleCell
+        
+        
     }
     
 }

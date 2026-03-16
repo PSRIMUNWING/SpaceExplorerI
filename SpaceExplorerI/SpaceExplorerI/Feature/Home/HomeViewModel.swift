@@ -8,6 +8,7 @@
 import Foundation
 import RxCocoa
 import UIKit
+import RxSwift  
 
 struct TableItem {
     let title: String
@@ -21,9 +22,13 @@ enum HomeRoute {
 }
 
 class HomeViewModel {
-
+    
+    private let disposeBag = DisposeBag()
+    
     // Output
     let items: Driver<[TableItem]>
+    let navigationEvent = PublishSubject<HomeRoute>()
+    let selectedItem = PublishSubject<TableItem>()
 
     init() {
         let data = [
@@ -32,13 +37,21 @@ class HomeViewModel {
                 subtitle: "NASA APOD — Daily image",
                 icon: UIImage(named: "ic-telescope"),
                 route: .adop)
-            
-//Example for adding the next one
-//            TableItem(title: "Venus",
-//                     subtitle: "The second rock from the Sun",
-//                     icon: UIImage(named: "logo-launch")),
         ]
         items = Driver.just(data)
+        setupNavigation()
+    }
+    
+    func didSelectItem(_ item: TableItem) {
+        selectedItem.onNext(item)
+    }
+    
+    private func setupNavigation() {
+        selectedItem
+            .subscribe(onNext: { [weak self] item in
+                self?.navigationEvent.onNext(item.route)
+            })
+            .disposed(by: disposeBag)
     }
     
 }

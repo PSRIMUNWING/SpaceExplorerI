@@ -25,7 +25,7 @@ class HomeViewController: UIViewController {
         super.viewDidLoad()
         setupView()
         setupTable()
-        navigation()
+        setupNavigation()
     }
     
     func setupView() {
@@ -75,21 +75,35 @@ class HomeViewController: UIViewController {
                                    icon: item.icon)
                 }
                 .disposed(by: disposeBag)
+        
+        tableView.rx.modelSelected(TableItem.self)
+                    .subscribe(onNext: { [weak self] item in
+                        self?.viewModel.didSelectItem(item)
+                    })
+                    .disposed(by: disposeBag)
     }
     
-    func navigation() {
-        tableView.rx.modelSelected(TableItem.self)
-            .subscribe(onNext: { [weak self] item in
-                switch item.route {
+    // MARK: NAVIGATION
+    
+    private func setupNavigation() {
+        //ALTERNATIVE WAY: https://medium.com/nerd-for-tech/mvvm-coordinators-ios-architecture-tutorial-fb27eaa36470
+        viewModel.navigationEvent
+            .subscribe(onNext: { [weak self] route in
+                switch route {
                 case .adop:
-                    let storyboard = UIStoryboard(name: "ADOP", bundle: nil)
-                    let vc = storyboard.instantiateViewController(
-                        withIdentifier: "ADOP"
-                    ) as! ADOPViewController
-                    self?.navigationController?.pushViewController(vc, animated: true)
+                    self?.navigateToADOP()
                 }
             })
             .disposed(by: disposeBag)
     }
     
+    private func navigateToADOP() {
+        let storyboard = UIStoryboard(name: "ADOP", bundle: nil)
+        let vc = storyboard.instantiateViewController(
+            withIdentifier: "ADOP"
+        ) as! ADOPViewController
+        navigationController?.pushViewController(vc, animated: true)
+    }
+    
 }
+
