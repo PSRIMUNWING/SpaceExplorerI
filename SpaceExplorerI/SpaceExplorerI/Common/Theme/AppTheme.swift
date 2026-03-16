@@ -18,9 +18,10 @@ enum AppTheme {
         alpha: 1
     )
     
-    static let titlePrimary = UIColor(hex: "#FFFFFF")
-    static let titleSecondary = UIColor(hex: "#4E9BFF")
-    static let subtitle = UIColor(hex: "#8A8AB0")
+    static let titlePrimary = UIColor(hex: "#FFFFFF") //White
+    static let titleSecondary = UIColor(hex: "#4E9BFF") //Blue
+    static let subtitle = UIColor(hex: "#8A8AB0") //Purple
+    static let buttonBackground = UIColor(hex: "#14142A") //Almost black
     
 }
 

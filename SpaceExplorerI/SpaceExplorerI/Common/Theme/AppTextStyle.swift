@@ -29,13 +29,16 @@ enum AppTextStyle {
         return UIFont(name: "TimesNewRomanPS-BoldMT", size: 14)
         ?? UIFont.systemFont(ofSize: 14, weight: .bold)
     }()
-
+    
     static let subtitleCell: UIFont = {
         return UIFont(name: "Georgia-Italic", size: 12)
         ?? UIFont.systemFont(ofSize: 12, weight: .semibold)
     }()
 
-    
+    static let titleItalicCell: UIFont = {
+        return UIFont(name: "Georgia-Italic", size: 18)
+        ?? UIFont.systemFont(ofSize: 18, weight: .bold)
+    }()
     
 
 }

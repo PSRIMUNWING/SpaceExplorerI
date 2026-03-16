@@ -4,7 +4,6 @@
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="23721"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
-        <capability name="Stack View standard spacing" minToolsVersion="9.0"/>
         <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -21,34 +20,34 @@
                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="FgV-fo-nYA">
                         <rect key="frame" x="0.0" y="0.0" width="430" height="136"/>
                         <subviews>
-                            <stackView opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" alignment="center" spacingType="standard" translatesAutoresizingMaskIntoConstraints="NO" id="RVU-at-MSi">
-                                <rect key="frame" x="25" y="70.333333333333329" width="380" height="40.666666666666671"/>
-                                <subviews>
-                                    <datePicker contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" datePickerMode="date" translatesAutoresizingMaskIntoConstraints="NO" id="aTu-Lt-Vu2">
-                                        <rect key="frame" x="0.0" y="0.0" width="297" height="41"/>
-                                    </datePicker>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="4Ow-lV-nbB">
-                                        <rect key="frame" x="305" y="0.33333333333334281" width="75" height="40.333333333333336"/>
-                                        <state key="normal" title="Button"/>
-                                        <buttonConfiguration key="configuration" style="plain" title="Button"/>
-                                    </button>
-                                </subviews>
-                            </stackView>
+                            <datePicker clipsSubviews="YES" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" ambiguous="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" datePickerMode="date" translatesAutoresizingMaskIntoConstraints="NO" id="aTu-Lt-Vu2">
+                                <rect key="frame" x="8" y="55.333333333333343" width="138" height="60.666666666666657"/>
+                                <color key="tintColor" systemColor="tableCellBlueTextColor"/>
+                            </datePicker>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="YyA-1V-HzS">
-                                <rect key="frame" x="25" y="25" width="41.333333333333343" height="20.333333333333329"/>
+                                <rect key="frame" x="25.000000000000004" y="25" width="41.333333333333343" height="20.333333333333329"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <nil key="textColor"/>
-                                <nil key="highlightedColor"/>
+                                <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <color key="highlightedColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                             </label>
+                            <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="4Ow-lV-nbB">
+                                <rect key="frame" x="177" y="76" width="77.333333333333314" height="40"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <state key="normal" title="Button"/>
+                                <buttonConfiguration key="configuration" style="plain" title="Search">
+                                    <color key="baseForegroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                </buttonConfiguration>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" systemColor="systemBrownColor"/>
                         <constraints>
-                            <constraint firstAttribute="bottom" secondItem="RVU-at-MSi" secondAttribute="bottom" constant="25" id="J11-85-iIx"/>
-                            <constraint firstItem="RVU-at-MSi" firstAttribute="leading" secondItem="FgV-fo-nYA" secondAttribute="leading" constant="25" id="aTb-2V-3Yg"/>
+                            <constraint firstItem="4Ow-lV-nbB" firstAttribute="leading" secondItem="aTu-Lt-Vu2" secondAttribute="trailing" constant="15" id="7EP-Lo-CfC"/>
+                            <constraint firstItem="aTu-Lt-Vu2" firstAttribute="leading" secondItem="FgV-fo-nYA" secondAttribute="leading" constant="15" id="Wj2-Zg-gWb"/>
                             <constraint firstItem="YyA-1V-HzS" firstAttribute="leading" secondItem="FgV-fo-nYA" secondAttribute="leading" constant="25" id="ePF-4p-AeC"/>
-                            <constraint firstAttribute="trailing" secondItem="RVU-at-MSi" secondAttribute="trailing" constant="25" id="hTV-cy-fW3"/>
+                            <constraint firstAttribute="bottom" secondItem="4Ow-lV-nbB" secondAttribute="bottom" constant="20" id="gwQ-7C-XVq"/>
+                            <constraint firstItem="aTu-Lt-Vu2" firstAttribute="top" secondItem="YyA-1V-HzS" secondAttribute="bottom" constant="10" id="hfd-6b-aVN"/>
                             <constraint firstItem="YyA-1V-HzS" firstAttribute="top" secondItem="FgV-fo-nYA" secondAttribute="top" constant="25" id="scU-eh-0wv"/>
-                            <constraint firstItem="RVU-at-MSi" firstAttribute="top" secondItem="YyA-1V-HzS" secondAttribute="bottom" constant="25" id="swZ-cl-qRC"/>
+                            <constraint firstAttribute="bottom" secondItem="aTu-Lt-Vu2" secondAttribute="bottom" constant="20" id="vGc-QR-t8V"/>
                         </constraints>
                     </view>
                 </subviews>
@@ -71,7 +70,10 @@
     </objects>
     <resources>
         <systemColor name="systemBrownColor">
-            <color red="0.63529411759999999" green="0.51764705879999995" blue="0.36862745099999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+            <color red="0.63529411764705879" green="0.51764705882352946" blue="0.36862745098039218" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </systemColor>
+        <systemColor name="tableCellBlueTextColor">
+            <color red="0.0" green="0.47843137254901963" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>
     </resources>
 </document>
