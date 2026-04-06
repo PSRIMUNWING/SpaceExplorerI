@@ -1,4 +1,4 @@
-#SpaceExplorerI 
+#SpaceExplorerI
 
 🚀 An iOS app that allows users to explore NASA's Astronomy Picture of the Day.
 
