@@ -26,7 +26,7 @@ enum AppTextStyle {
     }()
     
     static let titleCell: UIFont = {
-        return UIFont(name: "TimesNewRomanPS-BoldMT", size: 14)
+        return UIFont(name: "TimesNewRomanPS-BoldMT", size: 16)
         ?? UIFont.systemFont(ofSize: 14, weight: .bold)
     }()
     
@@ -34,11 +34,5 @@ enum AppTextStyle {
         return UIFont(name: "Georgia-Italic", size: 12)
         ?? UIFont.systemFont(ofSize: 12, weight: .semibold)
     }()
-
-    static let titleItalicCell: UIFont = {
-        return UIFont(name: "Georgia-Italic", size: 18)
-        ?? UIFont.systemFont(ofSize: 18, weight: .bold)
-    }()
-    
 
 }

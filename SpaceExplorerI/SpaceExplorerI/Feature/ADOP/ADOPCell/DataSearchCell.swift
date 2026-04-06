@@ -33,21 +33,21 @@ class DataSearchCell: UITableViewCell {
         view.layer.borderColor = UIColor.white.withAlphaComponent(0.1).cgColor
 
         //Component
-        titleCell.font = AppTextStyle.titleItalicCell
+        titleCell.font = AppTextStyle.titleCell
         titleCell.textColor = AppTheme.titleSecondary
                 
         datePicker.layer.backgroundColor = UIColor.white.cgColor
         datePicker.layer.cornerRadius = 10
-        datePicker.maximumDate = Date()
+        datePicker.maximumDate = Calendar.current.date(byAdding: .day, value: -1, to: Date())
         
-        searchButton.titleLabel?.font = AppTextStyle.subtitle
-        searchButton.titleLabel?.textColor = AppTheme.titlePrimary
-        searchButton.backgroundColor = AppTheme.buttonBackground
-        searchButton.layer.cornerRadius = 10
-//        searchButton.setBackgroundColor(AppTheme.buttonBackground, for: .highlighted)
-//        searchButton.setTitleColor(AppTheme.titlePrimary, for: .highlighted)
-        
-        //TODO: CUSTOM STYLE
+        searchButton.imageView?.contentMode = .scaleAspectFit
+        let config = UIImage.SymbolConfiguration(pointSize: 16, weight: .regular)
+        let image = UIImage(systemName: "magnifyingglass", withConfiguration: config)
+        searchButton.setImage(image, for: .normal)
+//        searchButton.titleLabel?.font = AppTextStyle.subtitle
+//        searchButton.titleLabel?.textColor = AppTheme.titlePrimary
+//        searchButton.backgroundColor = AppTheme.buttonBackground
+//        searchButton.layer.cornerRadius = 10
         setupRxButtonAction()
     }
     
