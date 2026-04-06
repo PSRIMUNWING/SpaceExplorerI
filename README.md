@@ -27,4 +27,4 @@
 4. Build and run
 
 ## Screenshots
-![App](/Users/ar667410/Desktop/SpaceExplorerI/screenshots/error_limit_api.jpg)
+[App](https://github.com/PSRIMUNWING/SpaceExplorerI/tree/feature/apod-page/screenshots/error_limit_api.jpg)
