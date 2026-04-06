@@ -38,3 +38,4 @@ pending...
 
 ### Error Cases
 ![App](https://raw.githubusercontent.com/PSRIMUNWING/SpaceExplorerI/feature/apod-page/screenshots/error_limit_api.jpg)
+![App](https://github.com/PSRIMUNWING/SpaceExplorerI/blob/main/screenshots/error_internet.jpg)
