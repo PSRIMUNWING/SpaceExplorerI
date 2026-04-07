@@ -17,8 +17,8 @@ class ImageCell: UITableViewCell {
     
     override func awakeFromNib() {
         super.awakeFromNib()
-//        backgroundColor = .clear
-//        contentView.backgroundColor = .clear
+        backgroundColor = .clear
+        contentView.backgroundColor = .clear
         viewCell.backgroundColor = .clear
         viewCell.layer.cornerRadius = 10
         viewCell.layer.masksToBounds = true
