@@ -33,8 +33,9 @@
 ![App](https://github.com/PSRIMUNWING/SpaceExplorerI/blob/main/screenshots/Home.jpg)
 ![App](https://github.com/PSRIMUNWING/SpaceExplorerI/blob/main/screenshots/ADOP.jpg)
 
-### A Success Case
-pending...
+### Success Cases
+![App](https://github.com/PSRIMUNWING/SpaceExplorerI/blob/main/screenshots/Success_1.png)
+![App](https://github.com/PSRIMUNWING/SpaceExplorerI/blob/main/screenshots/Success_2.jpg)
 
 ### Error Cases
 ![App](https://raw.githubusercontent.com/PSRIMUNWING/SpaceExplorerI/feature/apod-page/screenshots/error_limit_api.jpg)
